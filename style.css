@@ -1,0 +1,489 @@
+/* ---------------------  RESET ----------------------- */
+
+html,body {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+input,button
+{
+    font: inherit;
+}
+
+h1,p
+{
+    margin:0;
+}
+
+ /* For WebKit-based browsers */
+ input[type="number"]::-webkit-inner-spin-button,
+ input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+ }
+
+/* -------------------- Custom Properties ------------------- */
+
+:root{
+
+    /* --------font-family-------- */
+    --ff-monospace:'Space Mono', monospace;
+
+    /* --------font-sizes-------- */
+    --fs-24:1.5rem;
+
+    /* --------font-color------- */
+    --clr-strongCyan:172, 67%, 45%;
+    --clr-veryDarkCyan:183, 100%, 15%;
+    --clr-darkGrayishCyan:186, 14%, 43%;
+    --clr-grayishCyan:184, 14%, 56%;
+    --clr-lightGrayishCyan:185, 41%, 84%;
+    --clr-veryLightGrayishCyan:189, 41%, 97%;
+    --clr-white:0, 0%, 100%;    
+    --clr-softRed:10, 63%, 59%;
+
+    /* --------font-weight------- */
+    --fw-700:700;
+}
+
+/* ---------------set up the body------------- */
+body{
+    font-family: var(--ff-monospace);
+    background-color:hsl(var(--clr-lightGrayishCyan)) ;
+    color:hsl(var(--clr-darkGrayishCyan));
+    line-height: 1.5;
+    min-height:70vh;
+    display: grid;
+    place-content: center; 
+    font-weight: var(--fw-700);
+    font-size: var(--fs-24);
+    position:relative;
+}
+
+/* -------------- Typography --------------- */
+
+/* Typography - font-family */
+.ff-monospace{ font-family:var(--ff-monospace);}
+
+/* Typography - font-size */
+.fs-24{ font-size: var(--fs-24);}
+
+/* Typography - background color */
+.bg-white{ background-color:hsl(var(--clr-white));}
+.bg-strongCyan{ background-color:hsl(var(--clr-strongCyan));}
+
+/* Typography - text color */
+.text-white{ color:hsl(var(--clr-white));}
+
+
+/* Typography - letter-spacing */
+.letter-spacing { letter-spacing: 0.10rem; }
+
+/* Typography - uppercase */
+.upper-case{ text-transform:uppercase ;}
+
+/* Components */
+header
+{
+    margin:auto;
+    margin-top:8.13rem;
+}
+
+/* Input */
+input:focus{
+    border:1px solid hsl(var(--clr-strongCyan));
+    outline: none;
+}
+
+/* Placehoolder */
+::placeholder
+{
+    color:hsl(var(--clr-darkGrayishCyan));
+    text-align: center;
+}
+
+/* Logo */
+.logo-img
+{
+    width:4.38rem;
+    height:2.81rem;    
+}
+
+/* Main Container */
+.main-container
+{
+    max-width:50rem;
+    max-height:20.31rem;
+    margin-top:3.75rem;
+    background-color:hsl(var(--clr-white));
+    border-radius: 1.25rem;
+    font-size:0.94rem;
+    display: flex;
+    padding:1.88rem 1.88rem 2.5rem 1.88rem;
+}
+h1
+{
+    font-size:0.81rem;
+}
+/* Left Container */
+.left-container{
+
+    width:50%;
+    margin-right:1.88rem;
+}
+/* Right Container */
+.right-container{
+
+    width:20rem;
+    background-color: hsl(var(--clr-veryDarkCyan));
+    border-radius:0.63rem;
+    padding:2.81rem 1.88rem;
+    color:hsl(var(--clr-white));
+    margin-bottom:-0.63rem;
+}
+
+/* Bill */
+.bill-amount,.number-people
+{
+    width:20.63rem;
+    height:0.63rem;
+    padding:0.94rem;
+    text-align: right;
+    font-size:1.25rem;
+    background-color: hsl(var(--clr-veryLightGrayishCyan));
+    border:1px solid hsl(var(--clr-veryLightGrayishCyan));
+    color:hsl(var(--clr-veryDarkCyan));
+    border-radius: 0.31rem;
+}
+.dollar-img
+{
+    position:absolute;
+    width:0.63rem;
+    height:0.94rem;
+    margin-top:0.94rem;
+    margin-left:1.13rem;
+}
+
+.input-container
+{   margin-top:0.31rem;
+    position:relative;
+    margin-bottom:1.88rem;
+}
+
+.input-container h1
+{  
+    margin-bottom:0.31rem;
+}
+
+.bill-zero
+{
+   color:hsl(var(--clr-softRed));
+   margin-left:13.63rem;
+   display:none;
+}
+
+/* Tip */
+.tip-container{
+    width:18.75rem;
+}
+
+.tip-container h1
+{
+    margin-bottom:0.63rem;
+}
+
+.tip-5,.tip-10,.tip-15,.tip-25,.tip-50
+{
+    width:7rem;
+    height:2.5rem;   
+    font-size:1.25rem;
+    border:none;
+    background-color: hsl(var(--clr-veryDarkCyan));
+    color:hsl(var(--clr-white));
+    border-radius: 0.31rem;
+    cursor: pointer;
+}
+
+.tip-5:hover,.tip-10:hover,.tip-15:hover,.tip-25:hover,.tip-50:hover
+{
+   background-color:hsl(172, 78%, 54%);
+   color:hsl(var(--clr-veryDarkCyan));
+}
+
+/* Custom Tip */
+.custom
+{
+    color:hsl(var(--clr-veryDarkCyan));
+    background-color: hsl(var(--clr-veryLightGrayishCyan));
+    width:5.19rem;
+    height:2.5rem;   
+    font-size:1.25rem;
+    border-radius: 0.31rem;
+    border:transparent;
+    text-align: right;
+    padding:0 0.94rem;
+    cursor: pointer;
+}
+
+.custom-input
+{      
+    text-align: right;
+    padding:0.19rem 0.94rem 0 0;
+    width:6.25rem;
+    height:2.06rem;
+    margin-left:-0.44rem;
+    color:hsl(var(--clr-veryDarkCyan));
+} 
+.custom-input:hover
+{
+    border-color:hsl(var(--clr-strongCyan));
+    color:hsl(var(--clr-veryDarkCyan));
+ }
+
+/* Tip Buttons */
+.tip-btn
+{
+    display:grid;
+    grid-gap: 0.63rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);  
+    margin-bottom:1.88rem;    
+}
+
+/* Number Of People */
+.number-of-people h1
+{
+    margin-bottom:0.63rem;
+}
+
+/* person Image*/
+.person-img
+{
+    position:absolute;
+    width:0.94rem;
+    height:0.94rem;
+    margin-top:0.94rem;
+    margin-left:1.13rem;
+}
+
+.zero
+{
+    color:hsl(var(--clr-softRed));
+    margin-left:7.56rem;
+    display:none;
+}
+
+/* Tip/Person & Amount */
+.person{
+   font-size:0.63rem;
+   color:hsl(var(--clr-darkGrayishCyan));
+}
+
+.total-amount
+{
+   margin-bottom:2.5rem;
+   display:flex;
+   justify-content: space-between;
+}
+
+/* Currency Symbol */
+.currency-sign
+{
+    color:hsl(var(--clr-strongCyan));
+    font-size:2.19rem;  
+} 
+
+/* Amount */
+.amount{
+    margin-top:-0.63rem;
+}
+
+/* Total People */
+.total-people
+{
+  margin-bottom:5.63rem;
+  display:flex;
+  justify-content: space-between;
+  margin-top:-0.63rem;
+}
+
+.people
+{ 
+  margin-top:-0.31rem;
+}
+
+/* Reset Button */
+.reset-btn
+{
+    width:20rem;
+    height:2.5rem;  
+    text-align: center;
+    font-size:1.25rem;
+    background-color: hsl(var(--clr-strongCyan));
+    color:hsl(var(--clr-veryDarkCyan));
+    border:none;
+    font-size:0.94rem;
+    border-radius: 0.31rem;
+    cursor:pointer;
+}
+
+.reset-btn:hover
+{
+    background-color:hsl(172, 78%, 54%);   
+}
+
+/* Footer */
+footer{
+    font-size: 0.69rem;
+} 
+
+footer a
+{    
+    text-decoration: none;
+}
+
+/* Media Query */
+@media screen and (max-width:900px) {
+    /* Components */
+
+header
+{
+    margin-top:1.88rem;
+}
+
+/* Main Container */
+.main-container
+{
+    width: 19.68rem;
+    margin-top:1.88rem;
+    height:100%;
+    padding:1.25rem 1.88rem 19.38rem 1.88rem;
+    margin-left:-0.38rem;
+}
+/* Left Container */
+.left-container
+{
+    width:20rem;
+    margin-left:0px;
+    position:relative;
+}
+/* Right Container */
+.right-container
+{
+    width:17.06rem;
+    margin-top:23.75rem;
+    margin-left:-0.63rem;
+    position:absolute;
+    padding:2.81rem 1.88rem 1.88rem 1.88rem;
+}
+/* Bill */
+.bill-amount,.number-people
+{
+    width:17.81rem;
+}
+
+.input-container
+{  
+    margin-bottom:1.25rem;
+}
+
+.bill-zero
+{
+   margin-left:10.63rem;
+   display:none;
+}
+
+/* Tip */
+.tip-container
+{
+    margin-bottom:-0.63rem; 
+}
+/* Tip Buttons */
+.tip-btn
+{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);  
+ 
+}
+.tip-5,.tip-10,.tip-15,.tip-25,.tip-50
+{
+    width:9.56rem;
+}
+
+
+/* Custom Tip */
+.custom
+{
+    width:7.81rem;  
+}
+
+/* Number Of People */
+.number-of-people h1
+{
+    margin-bottom:0.63rem;
+}
+
+.zero
+{ 
+    margin-left:4.69rem;
+}
+
+.number-of-people
+{
+    margin-bottom:6.25rem;
+}
+
+/* Tip/Person & Amount */
+
+.total-amount
+{
+    margin-bottom:1.25rem; 
+}
+
+/* Currency Symbol */
+.currency-sign
+{
+    font-size: 1.88rem;  
+    margin-top:-0.31rem;
+} 
+
+/* Amount */
+.amount{
+    margin-top:-0.63rem;
+}
+
+/* Total People */
+.total-people
+{
+   margin-bottom:1.25rem;
+}
+
+.people
+{ 
+    margin-top:-0.31rem;
+}
+
+/* Reset Button */
+.reset-btn
+{
+    width:18.31rem;
+    height:2.5rem;  
+    margin-left:-0.63rem;
+    margin-bottom:-3.13rem;
+}
+
+/* Footer */
+footer
+{
+    margin-left:0.94rem;
+} 
+}
+
+
